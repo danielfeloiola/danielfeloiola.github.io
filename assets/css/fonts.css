@@ -8,7 +8,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/space-mono.woff2') format('woff2');
+    src: url('../fonts/space-mono-400.woff2') format('woff2');
 }
 
 /* Space Mono Bold (700) */
@@ -17,7 +17,7 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../fonts/space-mono-bold.woff2') format('woff2');
+    src: url('../fonts/space-mono-700.woff2') format('woff2');
 }
 
 /* Sora Light (300) */
