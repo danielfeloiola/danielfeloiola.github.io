@@ -14,8 +14,13 @@ function fadeIn(el, display) {
 
 // ** LANGUAGE SELECTOR **
 function Lang(language) {
-    var en = document.querySelectorAll("[lang='en']");
-    var pt = document.querySelectorAll("[lang='pt']");
+    
+    // Atualiza o lang do documento
+    document.documentElement.lang = language;
+    
+    // Seleciona só elementos internos, não html/body
+    var en = document.querySelectorAll("[lang='en']:not(html):not(body)");
+    var pt = document.querySelectorAll("[lang='pt']:not(html):not(body)");
 
     if (language == "en") {
         // change the selector active state
