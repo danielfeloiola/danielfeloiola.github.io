@@ -1,80 +1,81 @@
-# Particle Jekyll Theme
+# Portfolio Pessoal
 
-![](./particle.jpg)
+Portfolio minimalista com hero animado de network graph e interface bilíngue.
 
-This is a simple and minimalist template for Jekyll designed for developers that want to show of their portfolio.
+## Features
 
-The Theme features:
+- **Network Graph Hero** - Visualização interativa de partículas conectadas
+- **Bilíngue** - Português/Inglês com troca suave
+- **Performance** - Fontes locais, sem dependências externas pesadas
+- **Responsivo** - Design adaptativo para mobile e desktop
+- **Categorização** - Projetos organizados em Software e Pesquisa
+- **Animações** - Transições suaves com CSS animations
 
-- Gulp
-- SASS
-- Sweet Scroll
-- Particle.js
-- BrowserSync
-- Font Awesome and Devicon icons
-- Google Analytics
-- Info Customization
+## Stack
 
-## Basic Setup
+- HTML5 / CSS3 / JavaScript Vanilla
+- [Particles.js](https://github.com/VincentGarreau/particles.js/) - Network graph
+- Font Awesome - Ícones
+- Fontes: Space Mono + Sora (hospedadas localmente)
 
-1. [Install Jekyll](http://jekyllrb.com)
-2. Clone the particle theme: `git clone https://github.com/nrandecker/particle.git`
-3. Edit `_config.yml` to personalize your site.
-
-## Site and User Settings
-
-You have to fill some informations on `_config.yml` to customize your site.
+## Estrutura
 
 ```
-# Site settings
-description: A blog about lorem ipsum dolor sit amet
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://localhost:3000" # the base hostname & protocol for your site
-
-# User settings
-username: Lorem Ipsum
-user_description: Anon Developer at Lorem Ipsum Dolor
-user_title: Anon Developer
-email: anon@anon.com
-twitter_username: lorem_ipsum
-github_username:  lorem_ipsum
-gplus_username:  lorem_ipsum
+portfolio/
+├── index.html              # Página principal
+├── assets/
+│   ├── css/
+│   │   ├── fonts.css       # @font-face rules
+│   │   ├── hero-graph.css  # Estilos do hero
+│   │   └── main.css        # Estilos globais
+│   ├── js/
+│   │   ├── main.js         # Inicialização
+│   │   ├── selectors.js    # Seletores de idioma/tabs
+│   │   └── particles.min.js
+│   └── fonts/              # Fontes locais (woff2)
 ```
 
-**Don't forget to change your url before you deploy your site!**
+## Uso Local
 
-## Color and Particle Customization
-- Color Customization
-  - Edit the sass variables
-- Particle Customization
-  - Edit the json data in particle function in app.js
-  - Refer to [Particle.js](https://github.com/VincentGarreau/particles.js/) for help
+Simplesmente abra o `index.html` em um navegador ou use um servidor local:
 
-## Running the blog in local
+```bash
+# Python 3
+python -m http.server 8000
 
-In order to compile the assets and run Jekyll on local you need to follow those steps:
+# Python 2
+python -m SimpleHTTPServer 8000
 
-- Install [NodeJS](https://nodejs.org/)
-- Install [Jekyll](https://jekyllrb.com): `sudo gem install bundler jekyll`
-- Install [Yarn](https://yarnpkg.com/): `sudo npm install -g yarn`
-- Install dependencies: `yarn`
-- Run: `gulp`
+# Node.js (http-server)
+npx http-server
+```
 
+Acesse: `http://localhost:8000`
 
-#gem install --user-install bundler jekyll
-#export PATH=/Users/Daniel/.gem/ruby/2.6.0/bin:$PATH
+## Customização
 
+### Cores
+Edite as variáveis de cor em `assets/css/main.css` e `hero-graph.css`:
+- `#0a0a0f` - Background
+- `#64ffda` - Accent (cyan)
+- `#8a8a9a` - Text secondary
 
-## Questions
+### Conteúdo
+- **Textos bilíngues**: Use atributos `lang="pt"` e `lang="en"` nas tags
+- **Projetos**: Edite as seções com classe `.project-card` em `index.html`
+- **Network graph**: Configure em `particles.js` inicialização
 
-Having any issues file a [GitHub Issue](https://github.com/nrandecker/particle/issues/new).
+### Fontes
+Fontes estão em `assets/fonts/` e definidas em `assets/css/fonts.css`.
+Para trocar fontes, substitua os arquivos `.woff2` e atualize os `@font-face`.
 
-## License
+## Performance
 
-This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme anyway you want.
+- Fontes locais (~9.6KB total em woff2)
+- Sem dependências CDN (exceto Font Awesome)
 
-## Credits
+## Créditos
 
-This theme was partially designed with the inspiration from these fine folks
-- [Willian Justen](https://github.com/willianjusten/will-jekyll-template)
-- [Vincent Garreau](https://github.com/VincentGarreau/particles.js/)
+Inspirado em:
+- [Particle Jekyll Theme](https://github.com/nrandecker/particle) (original)
+- [Particles.js](https://github.com/VincentGarreau/particles.js/) - Vincent Garreau

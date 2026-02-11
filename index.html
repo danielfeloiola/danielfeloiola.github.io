@@ -2,7 +2,7 @@
 
 <html>
 
-  <!-- head -->
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,39 +10,52 @@
 
     <title>Meu Portfólio</title>
     <meta name="description" content="Meu portfólio pessoal">
+    <!-- Local Fonts -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/hero-graph.css">
   </head>
 
   <body>
-  <!-- Header -->
-    <div id="particles-js">
-      <div class="header">
-        <h1>
-          <!-- Hello -->
-          <span lang="pt" class="site-title">Olá, sou o Daniel</span>
-          <span lang="en" style="display:none;" class="site-title">Hello! I'm Daniel</span>
-          <!-- Description -->
-          <span lang="pt" class="site-description">Sou um pesquisador de mídia e programador</span>
-          <span lang="en" style="display:none;" class="site-description">I'm a Media Researcher and Programmer</span>
-        </h1>
-        <!-- Icons -->
-        <div class="header-icons">
-          <a aria-label="Email" href="mailto:danielfx19@gmail.com"><i class="icon fa fa-envelope"></i></a>
-          <a aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/in/daniel-loiola/"><i class="icon fa fa-linkedin" aria-hidden="true"></i></a>
-          <a aria-label="Github" target="_blank" href="https://github.com/danielfeloiola"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
-        </div>
-        <!-- Links -->
+  <!-- Header with Network Graph -->
+    <div id="hero-container">
+      <canvas id="hero-canvas"></canvas>
+      <div class="header-content">
+        <!-- Greeting -->
+        <p lang="pt" class="greeting">Olá, eu sou</p>
+        <p lang="en" class="greeting">Hello, I'm</p>
+        <!-- Name -->
+        <h1 class="name">Daniel Loiola</h1>
+        <!-- Tagline -->
+        <p lang="pt" class="tagline">Pesquisador de plataformas digitais e desenvolvedor Python</p>
+        <p lang="en" class="tagline">Digital platforms researcher and Python developer</p>
+        <!-- Social Links -->
+         <div class="social-links">
+                <a href="#" aria-label="Email">@</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="GitHub">⌥</a>
+            </div> 
+        <!--<div class="social-links">
+          <a href="mailto:danielfeloiola@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/daniel-loiola/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/danielfeloiola" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div> -->
+        <!-- Language Selector -->
         <div class="header-links">
-          <a class="link" style="cursor: pointer;" rel="alternate" onclick="Lang('pt')" hreflang="pt" id="ptSelector"><u>Português</u></a> &bull;
-          <a class="link" style="cursor: pointer;" rel="alternate" onclick="Lang('en')" hreflang="en" id="enSelector">English</a>
+          <button id="ptSelector" class="active" onclick="Lang('pt')">Português</button>
+          <span>/</span>
+          <button id="enSelector" onclick="Lang('en')">English</button>
         </div>
       </div>
       <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
     </div>
 
-    <!-- About me section -->
+    <!-- About me section 
     <section id="about">
-      <!-- Section header -->
+      <!-- Section header 
       <div class="user-details">
         <h1 lang="pt"> Experiência </h1>
         <h1 lang="en" style="display:none;"> My Expertise </h1>
@@ -50,7 +63,7 @@
         <p lang="en" style="display:none;"> I am a Digital Media and Communication researcher, working especially with data analysis and visualization to get insights from online platforms and social media. Here are some of my projects. Feel free to take a look around. </p>
       </div>
 
-      <!-- Technologies -->
+      <!-- Technologies 
       <div class="user">
         <div class="tech">
           <h2 lang="pt">Design</h2>
@@ -79,224 +92,226 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" lang="pt">Sobre</h2>
+        <h2 class="section-title" lang="en">About</h2>
+        
+        <p class="about-text" lang="pt">
+            Doutor em Comunicação pela UFMG, com experiência em desenvolvimento Python. 
+            Pesquiso dinâmicas de plataformas digitais e comunidades online, combinando métodos 
+            computacionais com teoria social. Construo ferramentas para coleta, análise e 
+            visualização de dados de mídias sociais.
+        </p>
+        <p class="about-text" lang="en">
+            PhD in Communication from UFMG, with experience in Python development. 
+            I research digital platform dynamics and online communities, combining computational 
+            methods with social theory. I build tools for collecting, analyzing, and visualizing 
+            social media data.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
     <section id="projects">
-      <div class="user-details">
-        <h1 lang="pt"> Projetos </h1>
-        <h1 lang="en" style="display:none;"> Featured Projects </h1>
+        <h2 class="section-title" lang="pt">Projetos</h2>
+        <h2 class="section-title" lang="en">Projects</h2>
 
-        <p lang="pt"> Aqui estão alguns dos meus projetos. Escolha uma categoria para ver mais.</p>
-        <p lang="en" style="display:none;"> Here are some of my projects. Choose a category to take a look. </p>
-
-      </div>
-
-      <!-- Selector -->
-      <div lang="pt" style="color:#000;text-decoration:none;font-size:25px;margin:10px;text-align: center;" >
-        <!--<a class="link" style="color:#999;cursor: pointer;" onclick="pSelect-('dataviz')" id="datavizSelector"><span>dataviz</span></a> &bull; -->
-        <a class="link" style="cursor: pointer;" onclick="pSelect('dataviz')" id="datavizSelector"><span>dataviz</span></a> &bull;
-        <a class="link" style="cursor: pointer;" onclick="pSelect('web')" id="webSelector"><u><span>web</span></u></a> &bull;
-        <a class="link" style="cursor: pointer;" onclick="pSelect('other')" id="otherSelector"><span>outros</span></a>
-      </div>
-      <div lang="en" style="display:none;color:#000;text-decoration:none;font-size:25px;margin:10px;text-align: center;" >
-        <!-- <a class="link" style="color:#999;cursor: pointer;" onclick="pSelect-('dataviz')" id="datavizSelectorEn"><span>dataviz</span></a> &bull;-->
-        <a class="link" style="cursor: pointer;" onclick="pSelect('dataviz')" id="datavizSelectorEn"><span>dataviz</span></a> &bull;
-        <a class="link" style="cursor: pointer;" onclick="pSelect('web')" id="webSelectorEn"><u><span>web</span></u></a> &bull;
-        <a class="link" style="cursor: pointer;" onclick="pSelect('other')" id="otherSelectorEn"><span>others</span></a>
-      </div>
+        <div class="project-tabs">
+            <button class="active" onclick="showTab('software', event)">
+                <span lang="pt" class="inline">Softwares</span>
+                <span lang="en" class="inline">Software</span>
+            </button>
+            <button onclick="showTab('research', event)">
+                <span lang="pt" class="inline">Pesquisa</span>
+                <span lang="en" class="inline">Research</span>
+            </button>
+        </div>
 
 
-      <!-- WEB PROJECTS-->
-      <!-- project: image on the right text on the left -->
-      <div class="user-projects" type="web">
-        <div class="images-right">
-          <img alt="tube plotter" src="assets/img/plotter.png" />
-        </div>
-        <div class="contents">
-          <!-- Project Name -->
-          <h3> Tube Plotter </h3>
-          <!-- Descriptions -->
-          <p lang="pt">Uma simples aplicação que plota thumbnails do YouTube em um grafo extraído do video network do YouTube Data Tools e espacializado no Gephi. Permite navegar pelo grafo usando as thumbnails de cada vídeo como nó. A versão CLI também permite fazer o download das thumbnails.</p>
-          <p lang="en" style="display:none;">A simple web application that plots YouTube thumbnails on a graph extracted from YouTube Data Tools Video Network module and spacialized on Gephi. Allows you to visualize the graph with the thumbnails for nodes. The CLI version also allows downloading the thumbnails.</p>
-          <!-- links -->
-          <a lang="pt" class="project-link" href="https://tube-plotter.up.railway.app/">Visitar</a>
-          <a lang="pt" class="project-link" href="https://github.com/danielfeloiola/tube_plotter_cli">Versão CLI</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://tube-plotter.up.railway.app/">Check it out</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://github.com/danielfeloiola/tube_plotter_cli">CLI Version</a>
-        </div>
-      </div>
+        <!-- Software Projects -->
+        <div id="software" class="projects-grid active">
+            <!-- Tube Plotter -->
+            <div class="project-card">
+                <h3>Tube Plotter</h3>
+                <p class="project-meta">WEB APP</p>
+                <p lang="pt">
+                    Aplicação web que plota thumbnails do YouTube em grafos de rede extraídos
+                    do YouTube Data Tools e espacializados no Gephi. Permite navegar pelo grafo
+                    usando as thumbnails como nós.
+                </p>
+                <p lang="en">
+                    Web application that plots YouTube thumbnails on network graphs extracted
+                    from YouTube Data Tools and spatialized in Gephi. Allows navigating the
+                    graph using thumbnails as nodes.
+                </p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>Sigma.js</span>
+                    <span>Network Analysis</span>
+                </div>
+                <a href="https://github.com/danielfeloiola/tube_plotter_cli" class="project-link" target="_blank">
+                    GitHub <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
-      <!-- project: image on the left text on the right -->
-      <div class="user-projects" type="web">
-        <div class="images-left">
-          <img alt="twit-data-map" src="assets/img/twitdata.jpg" />
-        </div>
-        <div class="contents-right">
-          <!-- Project Name -->
-          <h3> TwitData </h3>
-          <!-- Descriptions -->
-          <p lang="pt">TwitData é um simples aplicativo web que geolocaliza tweets em um mapa - permitindo buscas por usuário, hashtag ou trending topic. É uma maneira rápida de descobrir sobre o que estão falando em algum lugar, ou onde estão falando de algo.</p>
-          <p lang="en" style="display:none;">TwitData is a simple web application that geolocates tweets on a map - wether you search by user, hashtag or trending topics. It’s a simple and fast way to find out what user are talking about somewhere - or where they are talking about something.</p>
-          <!-- links -->
-          <a lang="pt" class="project-link" href="https://twit-data-production.up.railway.app/">Visitar</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://twit-data-production.up.railway.app/">Check it out</a>
-        </div>
-      </div>
+            <!-- Puppybot -->
+            <div class="project-card">
+                <h3>Puppybot</h3>
+                <p class="project-meta">TWITTER BOT</p>
+                <p lang="pt">
+                    Bot do Twitter que retuitava imagens de cachorros. Utilizava classificação
+                    de imagens com TensorFlow e Keras para filtrar conteúdo indesejado.
+                    Descontinuado após mudanças na API do Twitter.
+                </p>
+                <p lang="en">
+                    Twitter bot that retweeted puppy images. Used image classification with
+                    TensorFlow and Keras to filter unwanted content. Discontinued after
+                    Twitter API changes.
+                </p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>TensorFlow</span>
+                    <span>Keras</span>
+                    <span>Twitter API</span>
+                </div>
+                <a href="https://twitter.com/apuppybot/" class="project-link" target="_blank">
+                    <span lang="pt" class="inline">Perfil</span>
+                    <span lang="en" class="inline">Profile</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
-      <!-- project: image on the right text on the left -->
-      <div class="user-projects" type="web">
-        <div class="images-right">
-          <img alt="youtube-data" src="assets/img/ytd.jpg" />
+            <!-- Pinocchio's Pizza -->
+            <div class="project-card">
+                <h3>Pinocchio's Pizza</h3>
+                <p class="project-meta">E-COMMERCE</p>
+                <p lang="pt">
+                    Site para uma pizzaria com funcionalidades de e-commerce: carrinho de compras,
+                    gestão de pedidos e painel administrativo para atualização do menu.
+                </p>
+                <p lang="en">
+                    Website for a pizzeria with e-commerce features: shopping cart, order
+                    management, and admin panel for menu updates.
+                </p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>PostgreSQL</span>
+                </div>
+                <a href="https://thick-lissi-its-just-me-62e2a881.koyeb.app/" class="project-link" target="_blank">
+                    <span lang="pt" class="inline">Visitar</span>
+                    <span lang="en" class="inline">Visit</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
-        <div class="contents">
-          <!-- Project Name -->
-          <h3> YouTube Data </h3>
-          <!-- Descriptions -->
-          <p lang="pt">O YouTube Data é uma ferramenta web que faz simples coletas e visualizações de dados atravéas da API do YouTube, mostrando os videos mais recomendados para um tópico específico. Também possui uma função de análise de redes sem a necessidade de baixar os dados.</p>
-          <p lang="en" style="display:none;">YouTube Data is a web application to make simple data collections as visualizations via the YouTube API, showing what videos are more recommended for a specific search query. It also has a networks analisys function that don't require downloading the data.</p>
-          <!-- links -->
-          <a lang="pt" class="project-link" href="https://j6gabe.deta.dev/">Visitar</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://j6gabe.deta.dev/">Check it out</a>
-        </div>
-      </div>
 
-      <!-- project: image on the left text on the right -->
-      <div class="user-projects" type="web">
-        <div class="images-left">
-          <img alt="twit-viewer" src="assets/img/twitview.jpg" />
-        </div>
-        <div class="contents-right">
-          <!-- Project Name -->
-          <h3> Twit Viewer </h3>
-          <!-- Descriptions -->
-          <p lang="pt">Uma simples ferramenta que permite encontrar rapidamente um tweet usando apenas o nome do usuário e o id do tweet. Pode ser usado para visualizar conteúdo coletados através de ferramentas como o DMI-TCAT ou TAGS.</p>
-          <p lang="en" style="display:none;">A simple tool that allows the user to quickly find a tweet using only the username and the tweet id. Can be used to visualize content (like images and videos) collected through tools like TAGS or TCAT.</p>
-          <!-- links -->
-          <a lang="pt" class="project-link" href="https://b8tp31.deta.dev/">Visitar</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://b8tp31.deta.dev/">Check it out</a>
-        </div>
-      </div>
+        <!-- Research Projects -->
+        <div id="research" class="projects-grid">
+            <!-- Dissertação -->
+            <div class="project-card">
+                <h3>Recomendado Para Você: o impacto do algoritmo do YouTube na formação de bolhas</h3>
+                <p class="project-meta">
+                    <span lang="pt" class="inline">DISSERTAÇÃO DE MESTRADO • UFMG • 2018</span>
+                    <span lang="en" class="inline">MASTER'S THESIS • UFMG • 2018</span>
+                </p>
+                <p lang="pt">
+                    Estudo do impacto do sistema de recomendação do YouTube na diversidade de
+                    conteúdo, utilizando análise de redes e observação qualitativa de perfis
+                    simulados com diferentes orientações políticas.
+                </p>
+                <p lang="en">
+                    Study of YouTube's recommendation system impact on content diversity,
+                    using network analysis and qualitative observation of simulated profiles
+                    with different political orientations.
+                </p>
+                <div class="project-tags">
+                    <span>Filter Bubbles</span>
+                    <span>YouTube</span>
+                    <span>Network Analysis</span>
+                    <span>Algorithms</span>
+                </div>
+                <a href="https://repositorio.ufmg.br/items/61329167-140f-448f-bad8-7bba27596532" class="project-link" target="_blank">
+                    <span lang="pt" class="inline">Ler dissertação</span>
+                    <span lang="en" class="inline">Read thesis</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
-      <!-- project: image on the right text on the left -->
-      <div class="user-projects" type="web">
-        <div class="images-right">
-          <img alt="google-img-scraper" src="assets/img/cli.png" />
-        </div>
-        <div class="contents">
-          <!-- Project Name -->
-          <h3> Google Images Scraper </h3>
-          <!-- Descriptions -->
-          <p lang="pt">Uma simples ferramenta de linha de comando que faz a raspagem de resultados do Google Imagens. Utiliza um termo a ser pesquisado e devolve um arquivo em formato CSV e uma pasta com as imagens obtidas. Utiliza Python e Beautiful Soup.</p>
-          <p lang="en" style="display:none;">A simple command-line interface tool that scrapes the results from Google Images. Receives a search query and returns a CSV file and a folder with the downloaded images. Requires Python and Beautiful Soup.</p>
-          <!-- links -->
-          <a lang="pt" class="project-link" href="https://github.com/danielfeloiola/google_images_scraper">GitHub</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://github.com/danielfeloiola/google_images_scraper">GitHub</a>
-        </div>
-      </div>
+            <!-- Artigo Negacionismo -->
+            <div class="project-card">
+                <h3>O negacionismo do aquecimento global no YouTube: uma análise exploratória</h3>
+                <p class="project-meta">
+                    <span lang="pt" class="inline">ARTIGO • REVISTA DE CIÊNCIAS HUMANAS - RCH • 2022</span>
+                    <span lang="en" class="inline">PAPER • REVISTA DE CIÊNCIAS HUMANAS - RCH • 2022</span>
+                </p>
+                <p lang="pt">
+                    Análise exploratória da circulação de conteúdo negacionista sobre mudanças
+                    climáticas no YouTube brasileiro.
+                </p>
+                <p lang="en">
+                    Exploratory analysis of climate change denial content circulation on
+                    Brazilian YouTube.
+                </p>
+                <div class="project-tags">
+                    <span>Climate Denial</span>
+                    <span>YouTube</span>
+                    <span>Misinformation</span>
+                </div>
+                <a href="https://www.rchunitau.com.br/index.php/rch/article/view/928" class="project-link" target="_blank">
+                    <span lang="pt" class="inline">Ler artigo</span>
+                    <span lang="en" class="inline">Read paper</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
+            <!-- Data Sprint -->
+            <div class="project-card">
+                <h3>I WON THIS ELECTION, BY A LOT! Trump Spectacle and Memetic Antagonism on Twitter</h3>
+                <p class="project-meta">DATA SPRINT • NOVA FCSH LISBOA • 2021</p>
+                <p lang="pt">
+                    Análise das dinâmicas meméticas e antagonismo político nas respostas ao tweet
+                    de Trump declarando vitória na eleição de 2020. Utilizamos análise de redes,
+                    Google Vision API e visualização de dados para mapear padrões de imitação e
+                    intervenção afetiva.
+                </p>
+                <p lang="en">
+                    Analysis of memetic dynamics and political antagonism in replies to Trump's
+                    tweet declaring victory in the 2020 election. We used network analysis,
+                    Google Vision API, and data visualization to map patterns of imitation and
+                    affective intervention.
+                </p>
+                <div class="project-tags">
+                    <span>Memes</span>
+                    <span>Twitter</span>
+                    <span>Digital Methods</span>
+                    <span>Network Analysis</span>
+                </div>
+                <a href="https://smart2021.inovamedialab.org/project-reports-2/i-won-this-election-by-a-lot-trump-spectacle-and-memetic-antagonism-on-twitter/" class="project-link" target="_blank">
+                    <span lang="pt" class="inline">Ver projeto</span>
+                    <span lang="en" class="inline">View project</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
 
-      <!-- DATAVIZ PROJECTS -->
-      <!-- project: image on the right text on the left -->
-      <div class="user-projects" type="dataviz" style="display:none;">
-        <div class="images-right">
-          <img alt="vaporwave" src="assets/img/vaporwave.png" />
-        </div>
-        <div class="contents">
-          <!-- Project Name -->
-          <h3> Vaporwave is Dead! </h3>
-          <!-- Descriptions -->
-          <p lang="pt">Uma visualização de dados analisando vídeos de músicas do gênero Vaporwave no YouTube. Nos grafos é possível observar os difertentes subgêneros do Vaporwave, como o Synthwave e Chillhop, e as relações entre eles. Criada utilizando o YouTube Data Tools, Gephi e TubePlotter.</p>
-          <p lang="en" style="display:none;">A simple data visualizaton of Vaporwave music videos posted on YouTube. On the graphs we can see the different subgenres, like Synthwave and Chillhop, and how they relate to one another. Created using YouTube Data Tools, Gephi and TubePlotter. </p>
-          <!-- links -->
-          <a lang="pt" class="project-link" href="https://danf10.medium.com/an%C3%A1lise-de-redes-um-exame-post-mortem-do-vaporwave-c50660c7daaa">Visitar</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://danf10.medium.com/an%C3%A1lise-de-redes-um-exame-post-mortem-do-vaporwave-c50660c7daaa">Read (in Portuguese)</a>
-        </div>
-      </div>
-
-      <!-- OTHER PROJECTS -->
-       <!-- project: image on the right text on the left -->
-       <div class="user-projects" type="others" style="display:none;">
-         <div class="images-right">
-           <img alt="puppy robot" src="assets/img/puppy.jpg" />
-         </div>
-         <div class="contents">
-           <!-- Project Name -->
-           <h3> Puppybot </h3>
-           <!-- Descriptions -->
-           <p lang="pt">O Puppybot é um robô que retuita imagens de cahorrinhos. Ele faz o reconhecimento de imagens indevidas (como de gatos, por exemplo) utilizando inteligência artificial com TensorFlow e Keras. Foi desenvolvido utilizando Python.</p>
-           <p lang="en" style="display:none;"> Puppybot is a Twitter bot that retweets images of puppies! It can filter ugly images (like pictures of cats, for instance) using TensorFlow and Keras. It was developed using Python.</p>
-           <!-- Links -->
-           <a lang="pt" class="project-link" href="https://twitter.com/apuppybot/">Fazer carinho</a>
-           <a lang="en" style="display:none;"class="project-link" href="https://twitter.com/apuppybot/">Pet me!</a>
-         </div>
-       </div>
-
-       <!-- project: image on the left text on the right -->
-       <div class="user-projects" type="others" style="display:none;">
-         <div class="images-left">
-           <img alt="pinocchos pizza" src="assets/img/pinocchios.jpg" />
-         </div>
-         <div class="contents-right">
-           <!-- Project Name -->
-           <h3> Pinocchio's Pizza </h3>
-           <!-- Descriptions -->
-           <p lang="pt">Site para a Pinocchio’s Pizza, um restaurante italiano em Cambridge, MA. Conta com recursos de e-commerce como carrinho de compras, e também permite aos administradores fazer atualizações no menu via um painel. Criado com Python e Django.</p>
-           <p lang="en" style="display:none;">Website for Pinocchio’s Pizza, an italian restaurant in Cambridge, MA. Has typical e-commerce features like shopping carts, and also allows the admins to make changes to the menu via a panel. Built using Python and Django.</p>
-           <!-- Links -->
-           <a lang="pt" class="project-link" href="https://pizza.up.railway.app">Visitar</a>
-           <a lang="en" style="display:none;"class="project-link" href="https://pizza.up.railway.app">Yummy!</a>
-         </div>
-       </div>
-
-       <!-- project: image on the left text on the right -->
-       <div class="user-projects" type="others" style="display:none;">
-        <div class="images-right">
-          <img alt="pinocchos pizza" src="assets/img/flackr.jpeg" /> <!-- FLACKR -->
-        </div>
-        <div class="contents">
-          <!-- Project Name -->
-          <h3> Flackr </h3>
-          <!-- Descriptions -->
-          <p lang="pt">Um site para troca de mensagens instantâneas inspirado no Slack. Programado com Python no backend e JavaScript (ES6) no frontend, utilizando o framework Flask e Socket.IO para a troca de mensagens</p>
-          <p lang="en" style="display:none;">A Slack-inspired instant messaging site. Programmed with Python on the backend and JavaScript (ES6) on the frontend, and built using the Flask framework and Socket.IO for sending messages.</p>
-          <!-- Links -->
-          <a lang="pt" class="project-link" href="https://flackr.herokuapp.com/">Testar</a>
-          <a lang="en" style="display:none;"class="project-link" href="https://flackr.herokuapp.com/">Test</a>
-        </div>
-      </div>
-
-      <!-- project: image on the left text on the right -->
-      <div class="user-projects" type="others" style="display:none;">
-        <div class="images-left">
-          <img alt="book book" src="assets/img/book.jpeg" />
-        </div>
-        <div class="contents-right">
-          <!-- Project Name -->
-          <h3> Book Book </h3>
-          <!-- Descriptions -->
-          <p lang="pt">Um aplicativo web simples para avaliar os livros que você gosta. Criado com Python, Flask e PostgreSQL.</p>
-          <p lang="en" style="display:none;">A simple web app to review the books that you like. Built using Python, Flask and PostgreSQL.</p>
-          <!-- Links -->
-          <a lang="pt" class="project-link" href="https://book-book.up.railway.app">Visitar</a>
-          <a lang="en" style="display:none;" class="project-link" href="https://book-book.up.railway.app">Visit</a>
-        </div>
     </section>
 
 
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; Daniel Loiola</p>
-      <p>Build with Jekyll and <span class="love">❤</span> by Nathan Randecker</p>
+      <p>&copy; <span id="year"></span> Daniel Loiola</p>
     </footer>
 
   </body>
 
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="assets/js/sweet-scroll.min.js" type="text/javascript"></script>
+<script src="assets/js/hero-graph.js"></script>
 <script src="assets/js/main.js" type="text/javascript"></script>
-<script src="assets/js/lang.js" type="text/javascript"></script>
-<script src="assets/js/selector.js" type="text/javascript"></script>
+<script src="assets/js/selectors.js" type="text/javascript"></script>
 
 
 

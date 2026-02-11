@@ -1,0 +1,57 @@
+/* ================================================
+   Local Fonts
+   ================================================ */
+
+/* Space Mono Regular (400) */
+@font-face {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/space-mono.woff2') format('woff2');
+}
+
+/* Space Mono Bold (700) */
+@font-face {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/space-mono-bold.woff2') format('woff2');
+}
+
+/* Sora Light (300) */
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/sora-300.woff2') format('woff2');
+}
+
+/* Sora Regular (400) */
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/sora-400.woff2') format('woff2');
+}
+
+/* Sora Medium (500) */
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/sora-500.woff2') format('woff2');
+}
+
+/* Sora SemiBold (600) */
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/sora-600.woff2') format('woff2');
+}
