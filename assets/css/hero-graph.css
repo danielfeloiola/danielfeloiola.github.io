@@ -67,7 +67,7 @@
 /* Tagline */
 .tagline {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: #8a8a9a;
+    color: #9c9cac;
     font-weight: 300;
     margin-bottom: 3rem;
     line-height: 1.6;
@@ -89,7 +89,7 @@
 }
 
 .social-links a {
-    color: #8a8a9a;
+    color: #9c9cac;
     font-size: 1.4rem;
     transition: all 0.3s ease;
     padding: 0.5rem;
@@ -116,7 +116,7 @@
 .header-links button {
     background: none;
     border: none;
-    color: #8a8a9a;
+    color: #9c9cac;
     cursor: pointer;
     padding: 0.3rem 0.6rem;
     transition: all 0.3s ease;
@@ -135,14 +135,14 @@
 }
 
 .header-links span {
-    color: #8a8a9a;
+    color: #9c9cac;
     font-size: 0.9rem;
     line-height: 1;
 }
 
 /* Down arrow - inline with content */
 .down {
-    color: #8a8a9a;
+    color: #9c9cac;
     position: absolute;
     bottom: 3rem;
     left: clamp(3rem, 8vw, 8rem);

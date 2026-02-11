@@ -11,15 +11,6 @@
     src: url('../fonts/space-mono-400.woff2') format('woff2');
 }
 
-/* Space Mono Bold (700) */
-@font-face {
-    font-family: 'Space Mono';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('../fonts/space-mono-700.woff2') format('woff2');
-}
-
 /* Sora Light (300) */
 @font-face {
     font-family: 'Sora';

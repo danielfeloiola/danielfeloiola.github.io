@@ -71,8 +71,12 @@ Para trocar fontes, substitua os arquivos `.woff2` e atualize os `@font-face`.
 
 ## Performance
 
-- Fontes locais (~9.6KB total em woff2)
+- Fontes locais (~168KB total em woff2: Sora 132KB + Space Mono 16KB)
+  - Sora: 4 pesos (300, 400, 500, 600)
+  - Space Mono: 1 peso (400)
 - Sem dependências CDN (exceto Font Awesome)
+- CSS total: ~11KB
+- JS total: ~31KB
 
 ## Créditos
 

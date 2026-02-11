@@ -22,7 +22,7 @@ function Lang(language) {
         document.querySelector("#enSelector").classList.add("active");
         document.querySelector("#ptSelector").classList.remove("active");
         // change title
-        document.title = 'My portfolio';
+        document.title = 'Daniel Loiola - Portfolio';
         // hide pt and show en
         pt.forEach(el => { el.style.display = "none"; });
         en.forEach(el => {
@@ -37,7 +37,7 @@ function Lang(language) {
         document.querySelector("#ptSelector").classList.add("active");
         document.querySelector("#enSelector").classList.remove("active");
         // change title
-        document.title = 'Meu portfólio';
+        document.title = 'Daniel Loiola - Portfólio';
         // hide en and show pt
         en.forEach(el => { el.style.display = "none"; });
         pt.forEach(el => {
