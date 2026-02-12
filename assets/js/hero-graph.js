@@ -35,20 +35,25 @@
     const w = canvas.width;
     const h = canvas.height;
     const communityCount = 6;
-    const nodesPerCommunity = [20, 18, 16, 17, 18, 16];
+
+    // Escalar nós com a área da tela (calibrado para 1440×900)
+    const baseArea = 1440 * 900;
+    const densityScale = Math.min(2, Math.max(1, Math.pow((w * h) / baseArea, 0.65)));
+    const baseNodes = [20, 18, 16, 17, 18, 16];
+    const nodesPerCommunity = baseNodes.map(n => Math.round(n * densityScale));
     const nodes = [];
     const edges = [];
     let nodeId = 0;
 
     // Centro do grafo deslocado pro canto superior-direito
-    const graphCenterX = w * 0.7;
+    const graphCenterX = w * 0.85;
     const graphCenterY = h * 0.35;
 
     // Posições iniciais das comunidades em círculo
     const centers = [];
     for (let c = 0; c < communityCount; c++) {
         const angle = (c / communityCount) * Math.PI * 2 - Math.PI / 2;
-        const radius = Math.min(w, h) * 0.45;
+        const radius = Math.min(w, h) * 0.25;
         centers.push({
             x: graphCenterX + Math.cos(angle) * radius,
             y: graphCenterY + Math.sin(angle) * radius,
@@ -61,7 +66,7 @@
         const communityNodes = [];
         for (let i = 0; i < count; i++) {
             const angle = Math.random() * Math.PI * 2;
-            const dist = Math.random() * 90 + 20;
+            const dist = Math.random() * 110 + 30;
             const node = {
                 id: nodeId++,
                 community: c,
@@ -76,10 +81,11 @@
             communityNodes.push(node);
         }
 
-        // Edges intra-comunidade (~32% das conexões possíveis)
+        // Edges intra-comunidade (probabilidade escala inversamente com densityScale)
+        const intraProb = 0.32 / densityScale;
         for (let i = 0; i < communityNodes.length; i++) {
             for (let j = i + 1; j < communityNodes.length; j++) {
-                if (Math.random() < 0.32) {
+                if (Math.random() < intraProb) {
                     edges.push({ source: communityNodes[i].id, target: communityNodes[j].id });
                     communityNodes[i].degree++;
                     communityNodes[j].degree++;
@@ -88,10 +94,11 @@
         }
     }
 
-    // Edges inter-comunidade (~1.2% — esparso)
+    // Edges inter-comunidade (probabilidade escala inversamente com densityScale)
+    const interProb = 0.025 / densityScale;
     for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
-            if (nodes[i].community !== nodes[j].community && Math.random() < 0.012) {
+            if (nodes[i].community !== nodes[j].community && Math.random() < interProb) {
                 edges.push({ source: nodes[i].id, target: nodes[j].id });
                 nodes[i].degree++;
                 nodes[j].degree++;
@@ -175,7 +182,7 @@
     const graphCY = (minY + maxY) / 2;
 
     // Centro visual deslocado pro canto superior-direito
-    const viewCX = w * 0.6;
+    const viewCX = w * 0.75;
     const viewCY = h * 0.4;
 
     nodes.forEach(n => {
@@ -345,19 +352,19 @@
                 }
             }
 
-            // Glow nos nós de alto grau
-            if (n.degree > maxDegree * 0.6 && !hoveredNode) {
-                ctx.beginPath();
-                ctx.arc(n.x, n.y, size + 4, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},0.04)`;
-                ctx.fill();
-            }
+            // Glow via shadowBlur — intensidade proporcional ao grau
+            const glowIntensity = n.degree / maxDegree;
+            ctx.shadowBlur = 6 + glowIntensity * 16;
+            ctx.shadowColor = `rgba(${col[0]},${col[1]},${col[2]},${alpha * 0.5})`;
 
             ctx.beginPath();
             ctx.arc(n.x, n.y, size, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${alpha})`;
             ctx.fill();
         });
+
+        // Reset shadow para não afetar próximo frame
+        ctx.shadowBlur = 0;
 
         canvas.style.cursor = hoveredNode ? 'pointer' : 'default';
         animFrameId = requestAnimationFrame(draw);
