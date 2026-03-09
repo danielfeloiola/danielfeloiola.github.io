@@ -4,21 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
     const startLang = urlLang === 'en' ? 'en' : 'pt';
-    const hideLang = startLang === 'en' ? 'pt' : 'en';
 
-    // Hide the inactive language on page load
-    document.querySelectorAll("[lang='" + hideLang + "']:not(html):not(body)").forEach(el => {
-        el.style.display = "none";
-    });
-
-    // If starting in English, show EN elements with correct display type
+    // Initialize language (Lang() is defined in selectors.js)
     if (startLang === 'en') {
-        document.documentElement.lang = 'en';
-        document.title = 'Daniel Loiola - Portfolio';
-        document.getElementById('ptSelector').classList.remove('active');
-        document.getElementById('enSelector').classList.add('active');
+        Lang('en');
+    } else {
+        // Default: hide English elements
         document.querySelectorAll("[lang='en']:not(html):not(body)").forEach(el => {
-            el.style.display = el.classList.contains('inline') ? 'inline' : '';
+            el.style.display = "none";
         });
     }
 
