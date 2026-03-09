@@ -1,14 +1,27 @@
 // ** MAIN INITIALIZATION **
 document.addEventListener('DOMContentLoaded', function() {
-    // Hide all English text on page load (default to Portuguese)
-    document.querySelectorAll("[lang='en']").forEach(el => {
+    // Check URL for language parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const startLang = urlLang === 'en' ? 'en' : 'pt';
+    const hideLang = startLang === 'en' ? 'pt' : 'en';
+
+    // Hide the inactive language on page load
+    document.querySelectorAll("[lang='" + hideLang + "']").forEach(el => {
         el.style.display = "none";
     });
 
-    // Add initial-load class to Portuguese greeting and tagline for animation
-    document.querySelectorAll("[lang='pt'].greeting, [lang='pt'].tagline").forEach(el => {
+    // If starting in English, activate its selector and update document lang
+    if (startLang === 'en') {
+        document.documentElement.lang = 'en';
+        document.title = 'Daniel Loiola - Portfolio';
+        document.getElementById('ptSelector').classList.remove('active');
+        document.getElementById('enSelector').classList.add('active');
+    }
+
+    // Add initial-load class to greeting and tagline for animation
+    document.querySelectorAll("[lang='" + startLang + "'].greeting, [lang='" + startLang + "'].tagline").forEach(el => {
         el.classList.add('initial-load');
-        // Remove the class after animation completes to prevent re-animation on language switch
         setTimeout(() => {
             el.classList.remove('initial-load');
         }, 1000);
